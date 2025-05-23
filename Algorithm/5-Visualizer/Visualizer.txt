@@ -1,0 +1,12 @@
+Vscode Extension:
+Debug Visualizer
+Henning Dieterichs
+
+Web:
+Visualize data structures and algorithms
+https://www.youtube.com/shorts/uehCDW1fxUw
+
+ VSCode (Visual Studio Code) Debug Visualizer - Python Tutorial Demo 
+ https://www.youtube.com/watch?v=i_v_FzfYkwg
+
+ https://hediet.github.io/visualization/?darkTheme=1&tsTypes=1

@@ -1,0 +1,4 @@
+is that a QuickSort algorithm? I though recursive is an another type of sort algorithm like a merge sort algorithm?
+>
+Both Merge Sort and QuickSort are recursive sorting algorithms. "Recursive" simply means that the algorithm solves the problem by calling itself on smaller portions of the input. QuickSort does this by selecting a pivot element, partitioning the array around that pivot, and then recursively sorting the subarrays on each side. Merge Sort, on the other hand, divides the array into two halves, recursively sorts each half, and then merges the sorted halves back together.
+So yes, QuickSort is a recursive algorithm—just like Merge Sort—but they use different strategies to sort the data.

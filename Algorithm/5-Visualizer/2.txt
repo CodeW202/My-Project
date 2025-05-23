@@ -1,0 +1,38 @@
+command palette (Shift+Cmd+P on macOS )
+debug visualizer new view
+list
+Select the code of list
+
+
+
+To use your QuickSort code with VS Code’s Debug Visualizer (by Henning Dieterichs), the key is to have your debugging watch expression return a JSON string (or object) that adheres to one of the supported visualization schemas (for example, a bar chart using Plotly). In other words, instead of just returning the sorted array, you want to “decorate” your algorithm so that it logs (or collects) its internal state at each key step and then outputs that state in a JSON format that the extension can render.
+
+Below is an example in Python that modifies your quicksort to record its steps. (In this example, each swap or partitioning step is saved into a global list, and after the sort is complete, we output a JSON object that contains the final sorted array as well as the logged steps. We also include a simple Plotly bar chart schema so Debug Visualizer can display the sorted array as bars.)
+
+Note:
+The Debug Visualizer expects the evaluated expression to yield a JSON string (or object) with a “kind” property (like { "kind": {"plotly": true} }). You can then open the Debug Visualizer view (via the command palette) and enter your expression or use the “Use Selection as Expression” command.
+Here’s one way to do it:
+
+>CodeHere<
+
+How to Use This with Debug Visualizer in VS Code
+Set a Breakpoint:
+Run your Python code in VS Code with the debugger. Set a breakpoint after the sort (or in a place where you want to inspect the state).
+Open Debug Visualizer:
+Use the command palette (Shift+Cmd+P on macOS or Shift+Ctrl+P on Windows/Linux) and run Debug Visualizer: New View.
+Enter Your Expression:
+In the Debug Visualizer view, type an expression that evaluates to your JSON string. For example, if you have your JSON output stored in a variable, you can simply watch that variable. In our example, since we print the JSON, you could copy that output into the visualizer’s input.
+Visualize:
+The extension will parse the JSON (using the Plotly schema, in this case) and display a bar chart of your sorted array. You can also inspect the steps field to see the recorded state transitions during QuickSort.
+This approach lets you integrate your QuickSort code into the Debug Visualizer workflow. You can adapt the code further to log more detailed state information (like indices involved in swaps) or even create different JSON schemas (for example, a “graph” view) if needed.
+
+Let me know if you need further customization or have additional questions!
+
+
+
+
+
+
+
+
+

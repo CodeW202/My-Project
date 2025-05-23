@@ -1,0 +1,17 @@
+In short:
+
+Recursive Countdown:
+Makes a single recursive call (e.g., countdown(n-1))
+Simply decrements until reaching a base case (e.g., n ≤ 0)
+Straightforward and linear in nature
+
+Web:
+https://stackoverflow.com/questions/47045898/recursion-countdown
+
+Recursive Sort (e.g., Merge Sort):
+Splits the data into parts with multiple recursive calls
+Recursively sorts each part and then merges the sorted parts
+More complex and typically operates in O(n log n) time
+
+Web:
+https://awb.fyi/courses/cs201/w22/notes/sorting.html

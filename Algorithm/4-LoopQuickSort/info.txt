@@ -1,0 +1,14 @@
+Below are three implementations of quicksort that use different looping constructs. Each version sorts the same input array but uses a distinct looping approach for partitioning or iterating through subproblems.
+
+1. Using a For Loop for Partitioning (Recursive)
+In this version the list is recursively sorted, and a for loop replaces the list comprehension to build the left and right partitions.
+
+2. Using a While Loop for Partitioning (Recursive)
+Here, the partitioning step is implemented with a while loop instead of a for loop. The rest of the algorithm remains recursive.
+
+3. Using Both While and For Loops (Iterative)
+This version is an iterative implementation. It uses a while loop to process subarray intervals (stored in a stack) and a for loop inside the partitioning step. This avoids recursion altogether.
+
+Each version demonstrates a different approach to using loops in the quicksort algorithm. You can choose the one that best fits your needs or use them as learning examples for loop constructs in sorting algorithms.
+
+
