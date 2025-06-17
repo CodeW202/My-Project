@@ -1,0 +1,15 @@
+{
+  "ID": "12fews",
+  "Name": "Winsteen",
+  "WeaponName": "Sword",
+  "XPos": 20,
+  "YPos": 50,
+  "XSize": 20,
+  "YSize": 50,
+  "Speed": 5,
+  "WeaponSizeX": 10,
+  "WeaponSizeY": 30,
+  "WeaponOffsetX": 10,
+  "WeaponOffsetY": 10,
+  "score": 12
+}

@@ -1,0 +1,130 @@
+1 - Main character movement keypress
+2 - enemy move offscreen loop
+3 - enemy move up down loop
+4 - Main character shot bullet
+5 - bullet collision to enemy, 3 second death
+6 - bullet and cooldown object
+7.1 - Weapon object 
+7.2 - Draw character's weapon using object method
+8 - weapon + character fix
+9 - Adjuct Bullet comeout of weapon
+10 - add score when collision
+
+11 - p5.js-style loading of MainChacter.json 
+
+11 - p5.js-style loading of MainChacter.json from Server.js
+
+Create a server file
+ npm init -y
+ npm start
+node Server.js
+
+//run the game
+ http://localhost:3411
+
+//get all data
+ http://localhost:3411/MainChacter
+
+
+12 - Node.js-style loading of MainChacter.json use readjson file (Built-in http Module Server)
+
+/your-project/
+│
+├─ server.js
+├─ MainChacter.json
+└─ /Website/
+    └─ 12.js  ← your p5.js game
+
+13 - Express version of the server (Express Server)
+
+/your-project/
+├─ server2.js
+├─ MainChacter.json
+└─ /public/
+    ├─ index.html
+    └─ 13.js
+
+
+| What you visit                      | What Express does                          |
+| ----------------------------------- | ------------------------------------------ |
+| `http://localhost:3411`             | Serves `public/index.html` (your game UI)  |
+| `http://localhost:3411/13.js`   | Serves JavaScript from `public/13.js`  |
+| `http://localhost:3411/MainChacter` | Reads and sends `MainChacter.json` as JSON |
+
+
+Route come from:
+
+http://localhost:3411/MainChacter
+app.get('/MainChacter', (req, res) => { ... });
+
+http://localhost:3411/13
+app.use(express.static(path.join(__dirname, 'public')));
+
+ http://localhost:3411
+ or
+ http://localhost:3411/index.html
+
+ http://localhost:3411        ← loads public/index.html by default
+http://localhost:3411/index.html  ← explicitly loads the same file
+
+
+
+13 - update score in Server3.js
+
+BackEnd Test if not using Postman app:
+Change this:
+app.post('/updateScore', (req, res) => {
+    to
+app.get('/updateScore', (req, res) => {
+    from
+http://localhost:3411/updateScore
+    to increase the score from the 
+MainChacter.json
+
+
+For FrontEnd score to Work
+<script src="update.js"></script>
+
+✅ Keep this line if:
+
+You moved updateScore() into its own update.js file (which you did).
+You want to keep your code organized and modular.
+❌ If you remove it, any call to updateScore() will fail with:
+Uncaught ReferenceError: updateScore is not defined
+
+So yes — it is absolutely necessary in your setup.
+
+
+Successful Update Score Increase for JSON
+BackEnd & FrontEnd work when collision score increae in MainChacter.json
+
+
+14 - short cut
+nodemon Server3.js
+http://localhost:3411
+http://localhost:3411/MainChacter
+
+Postman App
+http://localhost:3411/updateScore
+
+http://localhost:3411/13.js
+
+
+&
+
+function updateScore() {
+    fetch('http://localhost:3411/updateScore', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ increaseBy: 1 })
+    })
+    .then(response => response.json())
+    .then(data => console.log('Score updated:', data))
+    .catch(error => console.error('Error updating score:', error));
+  }
+
+  //for sketch.js
+  //      updateScore();  // <-- Call backend here too
+  

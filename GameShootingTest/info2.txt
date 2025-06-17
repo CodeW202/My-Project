@@ -1,0 +1,35 @@
+//Continuse on Project2
+
+15 - seperate post and get require in server.js
+
+16 - add id and name and password login to json data
+
+17 - add more chatacter for id
+
+18 - do it in SQL Next
+Connect to SQL
+
+19 - make game pretty
+
+20 - make game master User for Setup Game
+
+
+Example of Project2:
+//node PJScuccess/Server9.js
+//Goal 1,
+MyProject #9:
+├─ data.json
+├─ Json/
+│  └─ data2.json
+├─ package.json
+PJScuccess9/
+└─ FrontEnd
+   └─ Website9/
+      └─ index.html
+   └─ Javascript9/
+      └─ 9.js
+└─ BackEnd/
+   └─ Server9.js
+   └─ ReadJson.js
+   └─ Pong.js
+   └─ Homepage.js
